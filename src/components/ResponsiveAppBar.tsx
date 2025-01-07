@@ -10,8 +10,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import { SvgIcon } from "@mui/material";
+import { pages } from "../navigationData.ts";
 
-const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
@@ -62,8 +62,8 @@ function ResponsiveAppBar() {
             }}
           >
             {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+              <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                <Typography sx={{ textAlign: "center" }}>{page.title}</Typography>
               </MenuItem>
             ))}
           </Box>

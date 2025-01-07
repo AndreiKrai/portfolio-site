@@ -4,22 +4,17 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
+import { Box, Chip  } from "@mui/material";
+import { CardData } from "../navigationData";
 
-export interface CardData {
-  image: string;
-  alt: string;
-  title: string;
-  subtitle: string;
-  technology: string;
-}
 
 interface ActionAreaCardProps {
-    item: CardData;
-  }
-  
+  item: CardData;
+}
+
 export default function ActionAreaCard({ item }: ActionAreaCardProps) {
   return (
-    <Card sx={{ maxWidth: 345, borderRadius: 3 }}>
+    <Card sx={{ maxWidth: 300, borderRadius: 3 }}>
       <CardActionArea sx={{ p: 1 }}>
         <CardMedia
           component="img"
@@ -28,11 +23,14 @@ export default function ActionAreaCard({ item }: ActionAreaCardProps) {
           alt={item.alt}
           sx={{ borderRadius: 2 }}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {item.title}
-          </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+        <CardContent sx={{ height: "90px" }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography gutterBottom variant="h5" component="div">
+              {item.title}
+            </Typography>
+            <Chip label={item.chipTitle} color={item.chipColor} size="small" />
+          </Box>
+          <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
             {item.subtitle}
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>

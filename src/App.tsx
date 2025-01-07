@@ -2,11 +2,11 @@ import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ResponsiveAppBar from "./components/ResponsiveAppBar.tsx";
 import HomePage from "./Pages/HomePage.tsx";
-
+import Bottom from "./components/Bottom.tsx";
 const App = () => {
   return (
     <Router>
-      <div className="app">
+      <div >
         <ResponsiveAppBar />
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
@@ -21,6 +21,7 @@ const App = () => {
             <Route path="*" element={<NotFoundPage />} /> */}
           </Routes>
         </Suspense>
+        <Bottom/>
       </div>
     </Router>
   );

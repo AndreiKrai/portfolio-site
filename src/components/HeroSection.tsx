@@ -32,6 +32,7 @@ const HeroSection = () => {
           alignItems: "center", // Center content
           justifyContent: "center",
           width: "100%", // Ensure container takes full width
+          pb:2
         }}
       >
         <img

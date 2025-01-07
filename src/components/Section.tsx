@@ -1,20 +1,58 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
 interface SectionProps {
   title: string;
   children: React.ReactNode;
 }
+
 export default function Section({ title, children }: SectionProps) {
   return (
-    <Container sx={{ backgroundColor: "rgb(250, 250, 250)", paddingY: "94px",boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)" }}>
-      <Typography
-        variant="h6"
-        sx={{mb:4, color: "rgb(117, 117, 117)", textAlign: "center" }}
-      >
-        {title}
-      </Typography>
-      {children}
-    </Container>
+    <Box
+      sx={{
+        backgroundColor: "rgb(250, 250, 250)",
+        boxShadow: "inset 0px 10px 10px -10px rgba(0, 0, 0, 0.3)",
+      }}
+    >
+      <Container sx={{ paddingY: "94px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 2, // Space between the text and the lines
+            mb:3
+          }}
+        >
+          <Box
+            sx={{
+              flex: 1,
+              height: "2px",
+              backgroundColor: "rgba(0, 0, 0, 0.1)",
+              display: { xs: "none", sm: "block" }, // Hide lines on small screens
+            }}
+          />
+          <Typography
+            variant="h6"
+            sx={{
+              color: "rgb(117, 117, 117)",
+              textAlign: "center",
+              whiteSpace: "nowrap", // Prevent text from wrapping
+            }}
+          >
+            {title}
+          </Typography>
+          <Box
+            sx={{
+              flex: 1,
+              height: "2px",
+              backgroundColor: "rgba(0, 0, 0, 0.1)",
+              display: { xs: "none", sm: "block" }, // Hide lines on small screens
+            }}
+          />
+        </Box>
+        {children}
+      </Container>
+    </Box>
   );
 }

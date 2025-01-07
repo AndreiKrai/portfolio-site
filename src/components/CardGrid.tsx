@@ -1,19 +1,15 @@
 import { Box } from "@mui/material";
 import React from "react";
 import Grid2 from "@mui/material/Grid2";
-import ActionAreaCard, { CardData } from "./Card.tsx";
+import ActionAreaCard from "./Card.tsx";
+import { CardData } from "../navigationData.ts";
 
-const data: CardData[] = [
-    {
-        image: "../assets/contemplative-reptile.jpg",
-        alt: "text",
-        title: "Lizard",
-        subtitle: "Lizards are a widespread group of",
-        technology: "REACT | NODE.JS",
-      },
-];
+interface CardGridProps {
+  list: CardData[];
+}
 
-export default function CardGrid() {
+export default function CardGrid({ list }: CardGridProps) {
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid2
@@ -22,8 +18,8 @@ export default function CardGrid() {
         sx={{ display: "flex", justifyContent: "center" }}
       >
         {/*Render 3 empty black boxes as items of this container*/}
-        {data.map((value) => (
-          <Grid2 key={value} item>
+        {list.map((value) => (
+          <Grid2 key={value.title} item>
             <ActionAreaCard item={value} />
           </Grid2>
         ))}
