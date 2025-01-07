@@ -11,7 +11,7 @@ const HeroSection = () => {
     const interval = setInterval(() => {
       setDisplayedText((prev) => prev + fullText[index]); // Use previous state
       index++;
-      if (index === fullText.length-1) {
+      if (index === fullText.length - 1) {
         clearInterval(interval); // Stop updating once all letters are added
       }
     }, 150); // Adjust timing for effect speed
@@ -19,7 +19,12 @@ const HeroSection = () => {
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
   return (
-    <Container maxWidth="sm">
+    <Container
+      // sx={{ boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.3)", // Bottom shadow
+      //   backgroundColor: "white", // Ensure the container has a background to make the shadow visible
+      //  // marginBottom: "4px", // Optional for spacing 
+      //   }}
+    >
       <Box
         sx={{
           display: "flex",
