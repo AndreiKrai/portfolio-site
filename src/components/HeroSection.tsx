@@ -1,26 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box, Container, Fade, Typography } from "@mui/material";
 import face from "../assets/face.jpg";
+import { useTheme } from "../hooks/useTheme.tsx";
+import { ThemeContext } from "../context/themeContext.tsx";
+import { MainContext } from "../context/mainContext.tsx";
 
 const HeroSection = () => {
   const fullText = "Weelcome to my site!";
   const [displayedText, setDisplayedText] = useState("");
-  const [visible, setVisible] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
+  const context = useContext(ThemeContext);
+  const mountContext = useContext(MainContext);
+
+  if (!mountContext) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  const { isMounted ,setIsMounted} = mountContext;
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
+
     // Show the component on mount
     setTimeout(() => {
-      setVisible(true);
+      setIsMounted(true);
     }, 1000);
   }, []);
 
   useEffect(() => {
-    if (!visible) {
+    console.log("__________",isMounted);
+    if (!displayedText) {
       return;
     }
     let index = 0;
     const interval = setInterval(() => {
       setDisplayedText((prev) => prev + fullText[index]); // Use previous state
+      console.log("__________+");
+
       index++;
       if (index === fullText.length - 1) {
         clearInterval(interval); // Stop updating once all letters are added
@@ -28,14 +43,10 @@ const HeroSection = () => {
     }, 150); // Adjust timing for effect speed
 
     return () => clearInterval(interval); // Cleanup on component unmount
-  }, [visible]);
+  }, [displayedText,isMounted]);
+
   return (
-    <Container
-    // sx={{ boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.3)", // Bottom shadow
-    //   backgroundColor: "white", // Ensure the container has a background to make the shadow visible
-    //  // marginBottom: "4px", // Optional for spacing
-    //   }}
-    >
+    <Container    >
       <Box
         sx={{
           display: "flex",
@@ -46,7 +57,10 @@ const HeroSection = () => {
           pb: 2,
         }}
       >
-        <Fade in={visible} timeout={{ appear: 1000, enter: 1000, exit: 1500 }}>
+        <Fade
+          in={isMounted}
+          timeout={{ appear: 1000, enter: 1000, exit: 1500 }}
+        >
           <img
             src={face}
             alt="Welcome"

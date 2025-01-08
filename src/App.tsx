@@ -13,14 +13,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/portfolio/:id" element={<PortfolioItemPage />} />
-            {/* Uncomment and update other routes as needed */}
-            {/* <Route path="movies" element={<SearchForm />} />
-            <Route path="movies/:movieId" element={<SingleMoviePage />}>
-              <Route path="casts" element={<Casts />} />
-              <Route path="reviews" element={<Review />} />
-            </Route>
-            <Route path="actor/:actorsId" element={<ActorPage />} />
-            <Route path="*" element={<NotFoundPage />} /> */}
           </Routes>
         </Suspense>
         <Bottom/>

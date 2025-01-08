@@ -1,20 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import App from './App.tsx';
-import reportWebVitals from './reportWebVitals.ts';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import './App.css';
+import App from "./App.tsx";
+import reportWebVitals from "./reportWebVitals.ts";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "./App.css";
+import { ContextProvider } from "./context/mainContext.tsx";
+import { ThemeProvider } from "./context/themeContext.tsx";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <NavigationProvider> */}
+    <ThemeProvider>
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    </ThemeProvider>
+    {/* </NavigationProvider> */}
   </React.StrictMode>
 );
 
