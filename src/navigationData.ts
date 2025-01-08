@@ -1,6 +1,7 @@
 import { ChipPropsColorOverrides } from "@mui/material";
 
 export interface CardData {
+  id: number;
   image: string;
   alt: string;
   title: string;
@@ -8,10 +9,12 @@ export interface CardData {
   technology: string;
   chipTitle: string;
   chipColor: ChipPropsColorOverrides;
+  link: string;
 }
 
 const commercialsData: CardData[] = [
   {
+    id: 1,
     image: "assets/contemplative-reptile.jpg",
     alt: "messo project",
     title: "Messo App",
@@ -20,8 +23,10 @@ const commercialsData: CardData[] = [
       "React native | TS | Redux | Node.js | MYSQL | SQL | Firebase | S3 Bucket",
     chipColor: "warning",
     chipTitle: "Mobile",
+    link: "",
   },
   {
+    id: 2,
     image: "assets/contemplative-reptile.jpg",
     alt: "BlueboxDriver project",
     title: "BlueboxDriver App",
@@ -29,8 +34,10 @@ const commercialsData: CardData[] = [
     technology: "React native | Node.js | SQL | Firebase | S3 Bucket",
     chipColor: "warning",
     chipTitle: "Mobile",
+    link: "",
   },
   {
+    id: 3,
     image: "assets/job-web-2.png",
     alt: "JobApply24 project",
     title: "JobApply24",
@@ -38,8 +45,10 @@ const commercialsData: CardData[] = [
     technology: "REACT | TS | Bootstrap",
     chipColor: "info",
     chipTitle: "WEB",
+    link: "",
   },
   {
+    id: 4,
     image: "assets/blue-web-1.png",
     alt: "BlueboxDriver project",
     title: "BlueboxDriver",
@@ -47,8 +56,10 @@ const commercialsData: CardData[] = [
     technology: "React | SQL | Node.js | Bootstrap | Redux",
     chipColor: "info",
     chipTitle: "WEB",
+    link: "",
   },
   {
+    id: 5,
     image: "assets/messo-web-1.png",
     alt: "messo project",
     title: "Messo",
@@ -56,10 +67,12 @@ const commercialsData: CardData[] = [
     technology: "React | Bootstrap",
     chipColor: "info",
     chipTitle: "WEB",
+    link: "",
   },
 ];
 const petData: CardData[] = [
   {
+    id: 6,
     image: "assets/node-1.png",
     alt: "messo project",
     title: "Node.js",
@@ -67,8 +80,10 @@ const petData: CardData[] = [
     technology: "Node.js | Express | MangoDB | Mongoose | Postman",
     chipColor: "success",
     chipTitle: "Backend",
+    link: "",
   },
   {
+    id: 7,
     image: "assets/netflix-web-1.png",
     alt: "messo project",
     title: "Netflix movie chart",
@@ -76,8 +91,10 @@ const petData: CardData[] = [
     technology: "HTML | CSS | JS | React | Webpack | REST API | TMDB API",
     chipColor: "info",
     chipTitle: "WEB",
+    link: "",
   },
   {
+    id: 9,
     image: "assets/studio-1.png",
     alt: "messo project",
     title: "WEB Studio Shop",
@@ -85,8 +102,10 @@ const petData: CardData[] = [
     technology: "HTML | SAAS | JS Vanila | Parcel | GIT",
     chipColor: "info",
     chipTitle: "WEB",
+    link: "",
   },
   {
+    id: 10,
     image: "assets/ice-web-1.png",
     alt: "messo project",
     title: "Ice Cream Shop",
@@ -94,6 +113,7 @@ const petData: CardData[] = [
     technology: "HTML | CSS | JS Vanila | Parcel | GIT",
     chipColor: "info",
     chipTitle: "WEB",
+    link: "",
   },
 ];
 
