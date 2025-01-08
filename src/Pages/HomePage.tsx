@@ -8,9 +8,8 @@ const HomePage = () => {
   return (
     <>
       <HeroSection></HeroSection>
-      <Section title={"MY COMMERCIAL PROJECTS"}><CardGrid list={commercialsData}/></Section>
-      <Section title={"MY PET PROJECTS"}><CardGrid list={petData}/></Section>
-
+      <Section title={"MY COMMERCIAL PROJECTS"} isLight={false}><CardGrid list={commercialsData}/></Section>
+      <Section title={"MY PET PROJECTS"} isLight={true}><CardGrid list={petData}/></Section>
     </>
   );
 };

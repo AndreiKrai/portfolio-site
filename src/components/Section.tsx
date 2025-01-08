@@ -2,15 +2,16 @@ import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
 interface SectionProps {
+  isLight: boolean;
   title: string;
   children: React.ReactNode;
 }
 
-export default function Section({ title, children }: SectionProps) {
+export default function Section({ isLight, title, children }: SectionProps) {
   return (
     <Box
       sx={{
-        backgroundColor: "rgb(250, 250, 250)",
+        backgroundColor: isLight ? "white" : "rgb(240, 240, 240)",
         boxShadow: "inset 0px 10px 10px -10px rgba(0, 0, 0, 0.3)",
       }}
     >
@@ -21,7 +22,7 @@ export default function Section({ title, children }: SectionProps) {
             alignItems: "center",
             justifyContent: "center",
             gap: 2, // Space between the text and the lines
-            mb:3
+            mb: 3,
           }}
         >
           <Box
