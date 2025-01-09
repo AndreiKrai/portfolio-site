@@ -3,11 +3,17 @@ import React from "react";
 
 interface SectionProps {
   isLight: boolean;
-  title: string;
+  title?: string;
   children: React.ReactNode;
+  paddingBottom?: number;
 }
 
-export default function Section({ isLight, title, children }: SectionProps) {
+export default function Section({
+  isLight,
+  title,
+  children,
+  paddingBottom = 94,
+}: SectionProps) {
   return (
     <Box
       sx={{
@@ -15,43 +21,47 @@ export default function Section({ isLight, title, children }: SectionProps) {
         boxShadow: "inset 0px 10px 10px -10px rgba(0, 0, 0, 0.3)",
       }}
     >
-      <Container sx={{ paddingY: "94px" }}>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 2, // Space between the text and the lines
-            mb: 3,
-          }}
-        >
+      <Container
+        sx={{ paddingTop: "94px", paddingBottom: `${paddingBottom}px` }}
+      >
+        {title && (
           <Box
             sx={{
-              flex: 1,
-              height: "2px",
-              backgroundColor: "rgba(0, 0, 0, 0.1)",
-              display: { xs: "none", sm: "block" }, // Hide lines on small screens
-            }}
-          />
-          <Typography
-            variant="h6"
-            sx={{
-              color: "rgb(117, 117, 117)",
-              textAlign: "center",
-              whiteSpace: "nowrap", // Prevent text from wrapping
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 2, // Space between the text and the lines
+              mb: 3,
             }}
           >
-            {title}
-          </Typography>
-          <Box
-            sx={{
-              flex: 1,
-              height: "2px",
-              backgroundColor: "rgba(0, 0, 0, 0.1)",
-              display: { xs: "none", sm: "block" }, // Hide lines on small screens
-            }}
-          />
-        </Box>
+            <Box
+              sx={{
+                flex: 1,
+                height: "2px",
+                backgroundColor: "rgba(0, 0, 0, 0.1)",
+                display: { xs: "none", sm: "block" }, // Hide lines on small screens
+              }}
+            />
+            <Typography
+              variant="h6"
+              sx={{
+                color: "rgb(117, 117, 117)",
+                textAlign: "center",
+                whiteSpace: "nowrap", // Prevent text from wrapping
+              }}
+            >
+              {title}
+            </Typography>
+            <Box
+              sx={{
+                flex: 1,
+                height: "2px",
+                backgroundColor: "rgba(0, 0, 0, 0.1)",
+                display: { xs: "none", sm: "block" }, // Hide lines on small screens
+              }}
+            />
+          </Box>
+        )}
         {children}
       </Container>
     </Box>
