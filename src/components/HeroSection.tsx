@@ -1,52 +1,58 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Box, Container, Fade, Typography } from "@mui/material";
 import face from "../assets/face.jpg";
-import { useTheme } from "../hooks/useTheme.tsx";
-import { ThemeContext } from "../context/themeContext.tsx";
-import { MainContext } from "../context/mainContext.tsx";
+import { useNavigation } from "../context/navigationContext.tsx";
 
 const HeroSection = () => {
-  const fullText = "Weelcome to my site!";
+  const fullText = "Welcome to my site!";
   const [displayedText, setDisplayedText] = useState("");
-  // const [isMounted, setIsMounted] = useState(false);
-  const context = useContext(ThemeContext);
-  const mountContext = useContext(MainContext);
-
-  if (!mountContext) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-  const { isMounted ,setIsMounted} = mountContext;
-  const { theme, toggleTheme } = useTheme();
+  const [showImage, setShowImage] = useState(false);
+  const { isMounted } = useNavigation();
 
   useEffect(() => {
-
-    // Show the component on mount
-    setTimeout(() => {
-      setIsMounted(true);
-    }, 1000);
-  }, []);
-
-  useEffect(() => {
-    console.log("__________",isMounted);
-    if (!displayedText) {
+    if (!isMounted) {
+      setShowImage(false);
       return;
+    } else {
+      setTimeout(() => {
+        setShowImage(true);
+      }, 1000);
     }
+  }, [isMounted]);
+
+  // useEffect(() => {
+  //   console.log("__________", isMounted);
+  //   if (!isMounted) {
+  //     return;
+  //   }
+  //   let index = 0;
+  //   const interval = setInterval(() => {
+  //     if (index < fullText.length) {
+  //       setDisplayedText((prev) => prev + fullText[index]);
+  //       index++;
+  //     } else {
+  //       clearInterval(interval);
+  //     }
+  //   }, 500); // Adjust the speed of the typing effect here
+  //   return () => clearInterval(interval); // Cleanup on unmount
+  // }, [displayedText, isMounted]);
+  useEffect(() => {
+    setTimeout(()=>{},1000)
     let index = 0;
     const interval = setInterval(() => {
-      setDisplayedText((prev) => prev + fullText[index]); // Use previous state
-      console.log("__________+");
-
-      index++;
-      if (index === fullText.length - 1) {
-        clearInterval(interval); // Stop updating once all letters are added
+      if (index < fullText.length-1) {
+        setDisplayedText((prev) => prev + fullText[index]);
+        index++;
+      } else {
+        clearInterval(interval); // Stop the interval when the text is fully displayed
       }
-    }, 150); // Adjust timing for effect speed
+    }, 500); // Adjust typing speed in milliseconds
 
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, [displayedText,isMounted]);
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [fullText]);
 
   return (
-    <Container    >
+    <Container>
       <Box
         sx={{
           display: "flex",
@@ -55,10 +61,11 @@ const HeroSection = () => {
           justifyContent: "center",
           width: "100%", // Ensure container takes full width
           pb: 2,
+          pt:{ xs: "62px", md: "92px"}
         }}
       >
         <Fade
-          in={isMounted}
+          in={showImage}
           timeout={{ appear: 1000, enter: 1000, exit: 1500 }}
         >
           <img

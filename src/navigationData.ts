@@ -1,4 +1,5 @@
 import { ChipPropsColorOverrides } from "@mui/material";
+import {NavigateTo} from "../src/context/navigationContext"
 
 export interface CardData {
   id: number;
@@ -117,8 +118,10 @@ const petData: CardData[] = [
   },
 ];
 
+
+
 const pages = [
-  { title: "ABOUT", url: "/" },
-  { title: "CONTACT", url: "/" },
+  { title: "my profile",
+onClick:"profile"   },
 ];
 export { commercialsData, petData, pages };

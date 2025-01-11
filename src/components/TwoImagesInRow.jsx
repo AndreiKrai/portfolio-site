@@ -1,10 +1,13 @@
 import { Box, Fade, Grid } from "@mui/material";
 import React from "react";
 import img from "../assets/web-ex.jpg";
+import { useNavigation } from "../context/navigationContext.tsx";
 
 export default function TwoImagesInRow() {
+  const { isMounted } = useNavigation();
+
   return (
-    <Fade in={true} timeout={{ appear: 1000, enter: 1000, exit: 1000 }}>
+    <Fade in={isMounted} timeout={{ appear: 1000, enter: 1000, exit: 1000 }}>
       <Box sx={{ mx: "36px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>

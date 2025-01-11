@@ -16,13 +16,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <NavigationProvider> */}
     <ThemeProvider>
       <ContextProvider>
-        <App />
+          <App />
       </ContextProvider>
     </ThemeProvider>
-    {/* </NavigationProvider> */}
   </React.StrictMode>
 );
 

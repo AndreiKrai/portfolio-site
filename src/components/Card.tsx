@@ -6,33 +6,20 @@ import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import { Box, Chip, Fade } from "@mui/material";
 import { CardData } from "../navigationData";
-import { Link, Router, useNavigate } from "react-router-dom";
-import { MainContext } from "../context/mainContext.tsx";
+import { useNavigation } from "../context/navigationContext.tsx";
 
 interface ActionAreaCardProps {
   item: CardData;
 }
 
 export default function ActionAreaCard({ item }: ActionAreaCardProps) {
-  const mountContext = React.useContext(MainContext);
-
-  if (!mountContext) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-  const { isMounted, setIsMounted } = mountContext;
-
-  const navigate = useNavigate();
-
-  const handleCardClick = (id: number) => {
-    setIsMounted(false);
-    setTimeout(() => navigate(`/portfolio/${id}`), 1500);
-  };
+  const {isMounted, navigateTo } = useNavigation()
 
   return (
-    <Fade in={isMounted} timeout={{ appear: 1000, enter: 1000, exit: 1500 }}>
+    <Fade in={isMounted} timeout={{ appear: 1000, enter: 1000, exit: 1000 }}>
       <Card
         sx={{ maxWidth: 300, borderRadius: 3 }}
-        onClick={() => handleCardClick(item.id)}
+        onClick={() => navigateTo.portfolio(item.id)}
       >
         <CardActionArea sx={{ p: 1 }}>
           <CardMedia

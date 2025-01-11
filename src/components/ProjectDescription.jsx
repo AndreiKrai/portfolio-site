@@ -1,23 +1,26 @@
 import { Box, Grid, Slide, Typography } from "@mui/material";
 import React from "react";
 import img from "../assets/main.jpg";
+import { useNavigation } from "../context/navigationContext.tsx";
 
 export default function ProjectDescription() {
+  const { isMounted } = useNavigation();
+
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} md={6} >
+    <Grid container spacing={2} sx={{ pt: { xs: "62px", md: "92px" } }}>
+      <Grid item xs={12} md={6}>
         <Slide
           direction="right"
-          in={true}
+          in={isMounted}
           timeout={1000}
           mountOnEnter
           unmountOnExit
-          sx={{mx: "42px", mt:{md:"84px"}} }
+          sx={{ mx: "42px", mt: { md: "84px" } }}
         >
           <Box>
             <Typography
               variant="h3"
-              sx={{ color: "black", textAlign: "start",my:2 }}
+              sx={{ color: "black", textAlign: "start", my: 2 }}
             >
               displayedText
             </Typography>
@@ -26,14 +29,17 @@ export default function ProjectDescription() {
                 flex: 1,
                 height: "2px",
                 backgroundColor: "rgba(0, 0, 0, 0.1)",
-                mb:4
+                mb: 4,
               }}
             />
             <Typography
               variant="caption"
               sx={{ color: "black", textAlign: "start" }}
             >
-              displayedText Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui ipsa, ipsum officia in consequuntur, animi odit voluptatibus ex dolorem nulla similique facilis aliquid molestias? Omnis molestiae suscipit dolore eaque molestias.
+              displayedText Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Qui ipsa, ipsum officia in consequuntur, animi odit
+              voluptatibus ex dolorem nulla similique facilis aliquid molestias?
+              Omnis molestiae suscipit dolore eaque molestias.
             </Typography>
           </Box>
         </Slide>
@@ -41,7 +47,7 @@ export default function ProjectDescription() {
       <Grid item xs={12} md={6}>
         <Slide
           direction="left"
-          in={true}
+          in={isMounted}
           timeout={1000}
           mountOnEnter
           unmountOnExit
