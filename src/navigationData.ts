@@ -19,7 +19,7 @@ export interface CardData {
 const commercialsData: CardData[] = [
   {
     id: 1,
-    image: "assets/messo-app-face.png",
+    image: "../assets/messo-app-face.png",
     alt: "messo project",
     title: "Messo App",
     subtitle: "Mobile messenger whitout cloud",
@@ -38,7 +38,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 2,
-    image: "assets/blue-app-face.png",
+    image: "../assets/blue-app-face.png",
     alt: "BlueboxDriver project",
     title: "BlueboxDriver App",
     subtitle: "Mobile application for cargo drivers",
@@ -56,7 +56,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 3,
-    image: "assets/job-web-2.png",
+    image: "../assets/job-web-2.png",
     alt: "JobApply24 project",
     title: "JobApply24",
     subtitle: "Job seaching portal",
@@ -69,7 +69,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 4,
-    image: "assets/blue-web-2.png",
+    image: "../assets/blue-web-2.png",
     alt: "BlueboxDriver project",
     title: "BlueboxDriver",
     subtitle: "Place client can manage parsel storage",
@@ -82,7 +82,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 5,
-    image: "assets/messo-web-1.png",
+    image: "../assets/messo-web-1.png",
     alt: "messo project",
     title: "Messo",
     subtitle: "",
@@ -97,7 +97,7 @@ const commercialsData: CardData[] = [
 const petData: CardData[] = [
   {
     id: 6,
-    image: "assets/node-1.png",
+    image: "../assets/node-1.png",
     alt: "messo project",
     title: "Node.js",
     subtitle: "Mobile messenger whitout cloud",
@@ -108,13 +108,12 @@ const petData: CardData[] = [
     screenshorts: [
       "../assets/Blue-mob-1.png",
       "../assets/Blue-mob-2.png",
-      "../assets/Blue-mob-3.png",
     ],
-    descriptionImage: "../assets/messo-mob-h.png",
+    descriptionImage: "../assets/blue-4.png",
   },
   {
     id: 7,
-    image: "assets/netflix-web-1.png",
+    image: "../assets/netflix-web-1.png",
     alt: "messo project",
     title: "Netflix movie chart",
     subtitle: "Movies owerview site",
@@ -123,15 +122,14 @@ const petData: CardData[] = [
     chipTitle: "WEB",
     link: "",
     screenshorts: [
-      "../assets/Blue-mob-1.png",
-      "../assets/Blue-mob-2.png",
-      "../assets/Blue-mob-3.png",
+      "../assets/net-web-1.png",
+      "../assets/net-web-2.png",
     ],
-    descriptionImage: "../assets/messo-mob-h.png",
+    descriptionImage: "../assets/blue-4.png",
   },
   {
     id: 9,
-    image: "assets/studio-1.png",
+    image: "../assets/studio-1.png",
     alt: "messo project",
     title: "WEB Studio Shop",
     subtitle: "Movies owerview site",
@@ -140,15 +138,14 @@ const petData: CardData[] = [
     chipTitle: "WEB",
     link: "",
     screenshorts: [
-      "../assets/Blue-mob-1.png",
-      "../assets/Blue-mob-2.png",
-      "../assets/Blue-mob-3.png",
+      "../assets/web-1.png",
+      "../assets/web-2.png",
     ],
     descriptionImage: "../assets/messo-mob-h.png",
   },
   {
     id: 10,
-    image: "assets/ice-web-1.png",
+    image: "../assets/ice-web-1.png",
     alt: "messo project",
     title: "Ice Cream Shop",
     subtitle: "Movies owerview site",
@@ -157,9 +154,8 @@ const petData: CardData[] = [
     chipTitle: "WEB",
     link: "",
     screenshorts: [
-      "../assets/Blue-mob-1.png",
-      "../assets/Blue-mob-2.png",
-      "../assets/Blue-mob-3.png",
+      "../assets/ice-web-2.png",
+      "../assets/ice-web-3.png",
     ],
     descriptionImage: "../assets/messo-mob-h.png",
   },

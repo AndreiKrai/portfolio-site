@@ -11,7 +11,9 @@ import { commercialsData, petData } from "../navigationData.ts";
 const PortfolioItemPage = () => {
   const { id } = useParams();
 
-  const details = commercialsData.find((data) => data.id === Number(id));
+  const details = [...commercialsData,...petData].find((data) => data.id === Number(id));
+  console.log("_______",details);
+  
   const renderScreenshorts = () => {
     if (details?.chipTitle === "Mobile") {
       return (
@@ -37,7 +39,7 @@ const PortfolioItemPage = () => {
       </Section>
       {renderScreenshorts()}
       <Section title={"CHECK OTHER PROJECTS"} isLight={true}>
-        <CardGrid list={petData} />
+        <CardGrid list={commercialsData} />
       </Section>
     </>
   );

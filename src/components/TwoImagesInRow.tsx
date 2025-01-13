@@ -21,7 +21,11 @@ export default function TwoImagesInRow({details}:TwoImagesInRowProps) {
               style={{
                 maxWidth: "100%",
                 height: "auto",
-                borderRadius:"8px"
+                borderRadius:"8px",
+                borderWidth:"1.5px",
+                borderColor:"#d6d6d6",
+                borderStyle: "solid",
+
                 // marginBottom: "16px",
                 // marginTop: "10px",
               }}
