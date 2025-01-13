@@ -17,7 +17,7 @@ export default function CardGrid({ list }: CardGridProps) {
         spacing={2}
         sx={{ display: "flex", justifyContent: "center" }}
       >
-        {/*Render 3 empty black boxes as items of this container*/}
+        {}
         {list.map((value) => (
           <Grid2 key={value.title} item>
             <ActionAreaCard item={value} />

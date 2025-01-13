@@ -2,12 +2,17 @@ import { Box, Grid, Slide, Typography } from "@mui/material";
 import React from "react";
 import img from "../assets/main.jpg";
 import { useNavigation } from "../context/navigationContext.tsx";
+import { CardData } from "../navigationData.ts";
 
-export default function ProjectDescription() {
+interface ProjectDescriptionProps{
+  details: CardData;
+}
+export default function ProjectDescription({details}:ProjectDescriptionProps) {
   const { isMounted } = useNavigation();
 
   return (
     <Grid container spacing={2} sx={{ pt: { xs: "62px", md: "92px" } }}>
+      
       <Grid item xs={12} md={6}>
         <Slide
           direction="right"
@@ -54,12 +59,12 @@ export default function ProjectDescription() {
         >
           <Box>
             <img
-              src={img}
+              src={details.descriptionImage}
               alt="Welcome"
               style={{
                 maxWidth: "100%",
                 height: "auto",
-                marginBottom: "16px",
+                // marginBottom: "16px",
                 marginTop: "10px",
               }}
             />

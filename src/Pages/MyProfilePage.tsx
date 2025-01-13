@@ -1,6 +1,6 @@
 import React from 'react'
 import Section from '../components/Section.tsx'
-import ProjectDescription from '../components/ProjectDescription'
+import ProjectDescription from '../components/ProjectDescription.tsx'
 
 export default function MyProfilePage() {
   return (

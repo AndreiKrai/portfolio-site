@@ -1,5 +1,6 @@
 import { ChipPropsColorOverrides } from "@mui/material";
-import {NavigateTo} from "../src/context/navigationContext"
+import { NavigateTo } from "../src/context/navigationContext";
+import img from "../src/assets/Blue-mob-1.png";
 
 export interface CardData {
   id: number;
@@ -8,15 +9,17 @@ export interface CardData {
   title: string;
   subtitle: string;
   technology: string;
-  chipTitle: string;
+  chipTitle: "Mobile" | "WEB" | "Backend";
   chipColor: ChipPropsColorOverrides;
   link: string;
+  screenshorts: [string, string] | [string, string, string, string];
+  descriptionImage: string;
 }
 
 const commercialsData: CardData[] = [
   {
     id: 1,
-    image: "assets/contemplative-reptile.jpg",
+    image: "assets/messo-app-face.png",
     alt: "messo project",
     title: "Messo App",
     subtitle: "Mobile messenger whitout cloud",
@@ -25,10 +28,17 @@ const commercialsData: CardData[] = [
     chipColor: "warning",
     chipTitle: "Mobile",
     link: "",
+    screenshorts: [
+      "../assets/messo-mob-2.png",
+      "../assets/messo-mob-1.png",
+      "../assets/messo-mob-3.png",
+      "../assets/messo-mob-4.png",
+    ],
+    descriptionImage: "../assets/messo-mob-h.png",
   },
   {
     id: 2,
-    image: "assets/contemplative-reptile.jpg",
+    image: "assets/blue-app-face.png",
     alt: "BlueboxDriver project",
     title: "BlueboxDriver App",
     subtitle: "Mobile application for cargo drivers",
@@ -36,6 +46,13 @@ const commercialsData: CardData[] = [
     chipColor: "warning",
     chipTitle: "Mobile",
     link: "",
+    screenshorts: [
+      "../assets/Blue-mob-1.png",
+      "../assets/Blue-mob-2.png",
+      "../assets/Blue-mob-3.png",
+      "../assets/Blue-mob-4.png",
+    ],
+    descriptionImage: "../assets/blue-mob-h.png",
   },
   {
     id: 3,
@@ -47,10 +64,12 @@ const commercialsData: CardData[] = [
     chipColor: "info",
     chipTitle: "WEB",
     link: "",
+    screenshorts: ["../assets/job24-2.png", "../assets/job24-3.png"],
+    descriptionImage: "../assets/job24-4.png",
   },
   {
     id: 4,
-    image: "assets/blue-web-1.png",
+    image: "assets/blue-web-2.png",
     alt: "BlueboxDriver project",
     title: "BlueboxDriver",
     subtitle: "Place client can manage parsel storage",
@@ -58,6 +77,8 @@ const commercialsData: CardData[] = [
     chipColor: "info",
     chipTitle: "WEB",
     link: "",
+    screenshorts: ["../assets/blue-2.png", "../assets/blue-3.png"],
+    descriptionImage: "../assets/blue-4.png",
   },
   {
     id: 5,
@@ -69,6 +90,8 @@ const commercialsData: CardData[] = [
     chipColor: "info",
     chipTitle: "WEB",
     link: "",
+    screenshorts: ["../assets/messo-web-2.png", "../assets/messo-web-3.png"],
+    descriptionImage: "../assets/messo-mob-h.png",
   },
 ];
 const petData: CardData[] = [
@@ -82,6 +105,12 @@ const petData: CardData[] = [
     chipColor: "success",
     chipTitle: "Backend",
     link: "",
+    screenshorts: [
+      "../assets/Blue-mob-1.png",
+      "../assets/Blue-mob-2.png",
+      "../assets/Blue-mob-3.png",
+    ],
+    descriptionImage: "../assets/messo-mob-h.png",
   },
   {
     id: 7,
@@ -93,6 +122,12 @@ const petData: CardData[] = [
     chipColor: "info",
     chipTitle: "WEB",
     link: "",
+    screenshorts: [
+      "../assets/Blue-mob-1.png",
+      "../assets/Blue-mob-2.png",
+      "../assets/Blue-mob-3.png",
+    ],
+    descriptionImage: "../assets/messo-mob-h.png",
   },
   {
     id: 9,
@@ -104,6 +139,12 @@ const petData: CardData[] = [
     chipColor: "info",
     chipTitle: "WEB",
     link: "",
+    screenshorts: [
+      "../assets/Blue-mob-1.png",
+      "../assets/Blue-mob-2.png",
+      "../assets/Blue-mob-3.png",
+    ],
+    descriptionImage: "../assets/messo-mob-h.png",
   },
   {
     id: 10,
@@ -115,13 +156,37 @@ const petData: CardData[] = [
     chipColor: "info",
     chipTitle: "WEB",
     link: "",
+    screenshorts: [
+      "../assets/Blue-mob-1.png",
+      "../assets/Blue-mob-2.png",
+      "../assets/Blue-mob-3.png",
+    ],
+    descriptionImage: "../assets/messo-mob-h.png",
   },
 ];
 
+const pages = [{ title: "my profile", onClick: "profile" }];
 
-
-const pages = [
-  { title: "my profile",
-onClick:"profile"   },
+const techList = [
+  "REACT",
+  "MSQL",
+  "SQL",
+  "HTML",
+  "CSS",
+  "SASS",
+  "Responsive,Adaptive design",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Redux,",
+  "Web-socket",
+  "REST API",
+  "GIT",
+  "Firebase",
+  "Firestore",
+  "SQL",
+  "NoSQL",
+  "Node.js",
+  "React Native (Expo)",
 ];
-export { commercialsData, petData, pages };
+export { commercialsData, petData, pages, techList };
