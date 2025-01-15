@@ -4,8 +4,6 @@ import face from "../assets/face.jpg";
 import { useNavigation } from "../context/navigationContext.tsx";
 
 const HeroSection = () => {
-  const fullText = ["W","e"];
-  const [displayedText, setDisplayedText] = useState("");
   const [showImage, setShowImage] = useState(false);
   const { isMounted } = useNavigation();
 
@@ -20,44 +18,6 @@ const HeroSection = () => {
     }
   }, [isMounted]);
 
-  // useEffect(() => {
-  //   console.log("__________", isMounted);
-  //   if (!isMounted) {
-  //     return;
-  //   }
-  //   let index = 0;
-  //   const interval = setInterval(() => {
-  //     if (index < fullText.length) {
-  //       setDisplayedText((prev) => prev + fullText[index]);
-  //       index++;
-  //     } else {
-  //       clearInterval(interval);
-  //     }
-  //   }, 500); // Adjust the speed of the typing effect here
-  //   return () => clearInterval(interval); // Cleanup on unmount
-  // }, [displayedText, isMounted]);
-  useEffect(() => {
-    setTimeout(() => {}, 1000);
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < fullText.length - 1) {
-        setDisplayedText((prev) => prev + fullText[index]);
-        index++;
-      } else {
-        clearInterval(interval); // Stop the interval when the text is fully displayed
-      }
-    }, 500); // Adjust typing speed in milliseconds
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [fullText]);
-
-  const showTech = (techList: string[]) => {
-    techList.forEach((tech, index) => {
-      setTimeout(() => {
-        setTechToShow((prev) => [...prev, tech]);
-      }, index * 50); // Add a delay for each tech based on its position
-    });
-  };
   return (
     <Container>
       <Box
@@ -86,7 +46,7 @@ const HeroSection = () => {
             }}
           />
         </Fade>
-        <Typography variant="h3" sx={{ color: "black", textAlign: "center" }}>
+        <Typography sx={{ color: "black", textAlign: "center",fontSize:{xs:"32px",md:"48px"} }}>
           Welcome to my page
         </Typography>
       </Box>

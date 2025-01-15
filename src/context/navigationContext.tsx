@@ -18,6 +18,7 @@ export interface NavigateTo {
   home: () => void;
   github: () => void;
   profile: () => void;
+  externalLink:(url:string)=>void;
 }
 interface MenuHandler {
   toggleMenu: () => void;
@@ -63,7 +64,10 @@ export const NavigationProvider = ({ children }: { children: ReactNode }) => {
       setIsMounted(false);
       setTimeout(() => navigate("/profile"), 1000);
     },
-
+    externalLink:(url:string)=>{
+      console.log("LLL");
+      
+      window.open(url, "_blank", "noopener,noreferrer");}
   };
 
   const menuHandler = {

@@ -25,7 +25,8 @@ function ResponsiveAppBar() {
     {
       label: "facebook",
       icon: <FacebookIcon sx={{ fontSize: "40px" }} />,
-      onClick: navigateTo.facebook,
+      onClick: () =>
+        navigateTo.externalLink("https://www.facebook.com/okraichenko.andrei"),
       sx: {
         mr: 2,
         width: { xs: 40, md: 62 },
@@ -36,7 +37,7 @@ function ResponsiveAppBar() {
     {
       label: "github",
       icon: <GitHubIcon sx={{ fontSize: "40px" }} />,
-      onClick: navigateTo.github,
+      onClick: () => navigateTo.externalLink("https://github.com/AndreiKrai"),
       sx: {
         mr: 2,
         width: { xs: 40, md: 62 },
@@ -45,9 +46,12 @@ function ResponsiveAppBar() {
       },
     },
     {
-      label: "github",
+      label: "linkedin",
       icon: <LinkedinIcon />,
-      onClick: navigateTo.github,
+      onClick: () =>
+        navigateTo.externalLink(
+          "https://www.linkedin.com/in/andrei-okraichenko-829700256/"
+        ),
       sx: {
         mr: 2,
         width: { xs: 40, md: 62 },
@@ -104,12 +108,12 @@ function ResponsiveAppBar() {
               >
                 {/* nav */}
                 {pages.map((page) => {
-                  const clickHandler =
-                    navigateTo[page.onClick as keyof typeof navigateTo];
+                  // const clickHandler =
+                  //   navigateTo[page.onClick as keyof typeof navigateTo];
                   return (
                     <MenuItem
                       key={page.title}
-                      onClick={clickHandler}
+                      onClick={page.onClick}
                       sx={{ display: { xs: "none", md: "block" } }}
                     >
                       <Typography sx={{ textAlign: "center", mr: 5 }}>
@@ -142,27 +146,22 @@ function ResponsiveAppBar() {
           }}
           onClick={(e) => e.stopPropagation()}
         >
-          {pages.map((page) => {
-            const clickHandler =
-              navigateTo[page.onClick as keyof typeof navigateTo];
-
-            return (
-              <Fade
-                in={isOpenMenu}
-                timeout={{ appear: 500, enter: 500, exit: 500 }}
+          {pages.map((page) => (
+            <Fade
+              in={isOpenMenu}
+              timeout={{ appear: 500, enter: 500, exit: 500 }}
+              key={page.title} // Use title as the key since it is unique
+            >
+              <MenuItem
+                onClick={page.onClick}
+                sx={{ justifyContent: "center", height: "64px" }}
               >
-                <MenuItem
-                  key={page.title}
-                  onClick={clickHandler}
-                  sx={{ justifyContent: "center", height: "64px" }}
-                >
-                  <Typography sx={{ color: "white" }}>{page.title}</Typography>
-                </MenuItem>
-              </Fade>
-            );
-          })}
+                <Typography sx={{ color: "white" }}>{page.title}</Typography>
+              </MenuItem>
+            </Fade>
+          ))}
           <Divider sx={{ borderColor: "gray", m: 0 }} />
-          <Box sx={{ display: "flex", justifyContent: "center" ,mb:1}}>
+          <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
             <ButtonsBar socialLinks={socialLinks} />
           </Box>
         </Box>

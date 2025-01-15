@@ -46,14 +46,11 @@ const BackgroundListiners = () => {
   const closeMenuImmediately = () => {
     if (isOpenMenu) {
       menuHandler.closeMenu(); // Close menu immediately
-      console.log("Menu closed immediately due to scrolling");
     }
   };
 
   // Function to trigger after the scroll has stopped (with a delay)
   const handleDelayedScrollLogic = () => {
-    console.log("Scroll stopped, triggering delayed logic...");
-    // Additional logic can go here if needed (e.g., triggering animation or effects)
   };
 
   return null;

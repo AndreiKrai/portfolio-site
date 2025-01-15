@@ -6,12 +6,13 @@ import { NavigationProvider } from "./context/navigationContext.tsx";
 import BackgroundListiners from "./components/BackgroundListiners.tsx";
 import MyProfilePage from "./Pages/MyProfilePage.tsx";
 import Layout from "./components/Layout.tsx";
+import { createTheme, ThemeProvider } from "@mui/material";
 const App = () => {
   return (
     <Router>
       <NavigationProvider>
+      <ThemeProvider theme={theme}>
         <BackgroundListiners />
-        {/* <ResponsiveAppBar /> */}
         <Suspense fallback={<div>Loading...</div>}>
           <Layout>
             <Routes>
@@ -21,10 +22,15 @@ const App = () => {
             </Routes>
           </Layout>
         </Suspense>
-        {/* <Bottom /> */}
+        </ThemeProvider>
       </NavigationProvider>
     </Router>
   );
 };
 
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Work-Sans-Regular, Arial, sans-serif', 
+  },
+});
 export default App;

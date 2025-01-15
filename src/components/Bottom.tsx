@@ -22,30 +22,28 @@ export default function Bottom() {
             mx: 4,
           }}
         >
+          <Box sx={{display:"flex",flexDirection: "column", 
+        alignItems: "flex-start", }}>
           <Typography
             sx={{ textAlign: "center", color: "text.secondary" }}
             variant="body2"
           >
             © Okraichenko Andrii
           </Typography>
+          <Typography
+            sx={{ textAlign: "center", color: "text.secondary" }}
+            variant="body2"
+          >
+           {"\u{02709}"} okraichenko.a@gmail.com
+          </Typography></Box>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {/* {pages.map((page) => (
-              <MenuItem key={page.title}>
-                <Typography
-                  sx={{ textAlign: "center", color: "text.secondary" }}
-                  variant="body2"
-                >
-                  {page.title}
-                </Typography>
-              </MenuItem>
-            ))} */}
              {pages.map((page) => {
-                const clickHandler =
-                  navigateTo[page.onClick as keyof typeof navigateTo];
+                // const clickHandler =
+                //   navigateTo[page.onClick as keyof typeof navigateTo];
                 return (
                   <MenuItem
                     key={page.title}
-                    onClick={clickHandler}
+                    onClick={page.onClick}
                     sx={{ display: { xs: "none", md: "block" } }}
                   >
                     <Typography sx={{textAlign: "center", color: "text.secondary"  }}>

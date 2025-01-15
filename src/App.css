@@ -1,4 +1,11 @@
 body { margin: 0; }
+
+@font-face {
+  font-family: 'Work-Sans-Regular';
+  src: url('/src/fonts/work-sans.regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /* .App {
   text-align: center;
 }

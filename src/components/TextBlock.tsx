@@ -1,8 +1,12 @@
 import { Box, Fade, Typography } from "@mui/material";
 import React from "react";
 import { useNavigation } from "../context/navigationContext.tsx";
+import { CardData } from "../navigationData.ts";
 
-export default function TextBlock({}) {
+interface TextBlockProps {
+  details: CardData;
+}
+export default function TextBlock({details}:TextBlockProps) {
   const { isMounted } = useNavigation();
 
   return (
@@ -21,7 +25,7 @@ export default function TextBlock({}) {
             variant="h3"
             sx={{ color: "black", textAlign: "start", mb: 1 }}
           >
-            displayedText
+            {details.title}
           </Typography>
           <Box
             sx={{

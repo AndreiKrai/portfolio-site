@@ -9,24 +9,24 @@ import { CardData } from "../navigationData";
 import { useNavigation } from "../context/navigationContext.tsx";
 
 interface ActionAreaCardProps {
-  item: CardData;
+  data: CardData;
 }
 
-export default function ActionAreaCard({ item }: ActionAreaCardProps) {
+export default function ActionAreaCard({ data }: ActionAreaCardProps) {
   const {isMounted, navigateTo } = useNavigation()
 
   return (
     <Fade in={isMounted} timeout={{ appear: 1000, enter: 1000, exit: 1000 }}>
       <Card
         sx={{ maxWidth: 300, borderRadius: 3 }}
-        onClick={() => navigateTo.portfolio(item.id)}
+        onClick={() => navigateTo.portfolio(data.id)}
       >
         <CardActionArea sx={{ p: 1 }}>
           <CardMedia
             component="img"
             height="160"
-            image={item.image}
-            alt={item.alt}
+            image={data.image}
+            alt={data.alt}
             sx={{ borderRadius: 2 }}
           />
           <CardContent sx={{ height: "90px" }}>
@@ -37,19 +37,19 @@ export default function ActionAreaCard({ item }: ActionAreaCardProps) {
                 component="div"
                 style={{ color: "black" }}
               >
-                {item.title}
+                {data.title}
               </Typography>
               <Chip
-                label={item.chipTitle}
-                color={item.chipColor}
+                label={data.chipTitle}
+                color={data.chipColor}
                 size="small"
               />
             </Box>
-            <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
-              {item.subtitle}
+            <Typography variant="subtitle2" sx={{ color:"black" ,}}>
+              {data.subtitle}
             </Typography>
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              {item.technology}
+              {data.technology}
             </Typography>
           </CardContent>
         </CardActionArea>
