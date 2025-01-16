@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Box, Container, Fade, Typography } from "@mui/material";
-import face from "../assets/face.jpg";
+import face from "../assets/me-1.png";
 import { useNavigation } from "../context/navigationContext.tsx";
 
 const HeroSection = () => {
@@ -22,6 +22,7 @@ const HeroSection = () => {
     <Container>
       <Box
         sx={{
+          position: "relative",
           display: "flex",
           flexDirection: "column",
           alignItems: "center", // Center content
@@ -39,14 +40,25 @@ const HeroSection = () => {
             src={face}
             alt="Welcome"
             style={{
-              maxWidth: "100%", // Image scales with container
+              maxWidth: "70%", // Image scales with container
               height: "auto", // Maintains aspect ratio
               marginBottom: "16px", // Space between image and text
               marginTop: "10px",
             }}
           />
         </Fade>
-        <Typography sx={{ color: "black", textAlign: "center",fontSize:{xs:"32px",md:"48px"} }}>
+        <Typography
+          sx={{
+            position: {xs:"relative",md:"absolute"},
+            zIndex:3,
+            top: {xs:"0",md:"140px"},
+            right: {xs:"0",md:"120px"},
+            color: "black",
+            textAlign: "center",
+            fontSize: { xs: "32px", md: "48px" },
+            fontWeight:700
+          }}
+        >
           Welcome to my page
         </Typography>
       </Box>
