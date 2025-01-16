@@ -6,6 +6,7 @@ import jobApply24 from  "./assets/job-web-2.png";
 import blueboxRent from "./assets/blue-web-2.png";
 import messo from  "./assets/messo-web-1.png";
 import node from  "./assets/node-1.png";
+import node1 from "./assets/node-h.png"
 import netflix from "./assets/netflix-web-1.png";
 import webstudio from  "./assets/studio-1.png";
 import ice from  "./assets/ice-web-1.png";
@@ -113,7 +114,7 @@ const commercialsData: CardData[] = [
 const petData: CardData[] = [
   {
     id: 6,
-    image: node,
+    image: node1,
     alt: "Node",
     title: "Node.js",
     subtitle: "Mobile messenger whitout cloud",
@@ -121,7 +122,7 @@ const petData: CardData[] = [
     chipColor: "success",
     chipTitle: "Backend",
     gitLink:"https://github.com/AndreiKrai/goit-reactNode-hw-Rest-API",
-    descriptionImage: "../assets/node-h.png",
+    descriptionImage: node,
     projectReview:"A personal project was created using Node.js and Express for the backend, incorporating modern technologies such as MongoDB for data storage,and JWT for authentication. The project features RESTful APIs for handling client requests and uses middleware for improved error handling and request validation. The backend is designed to be scalable and secure, following best practices for modern web development. This project serves as a solid example of building a robust backend architecture with current industry tools and technologies."
   },
   {
