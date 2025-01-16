@@ -1,10 +1,19 @@
 {
   "files": {
     "main.css": "/portfolio-site/static/css/main.020efd5d.css",
-    "main.js": "/portfolio-site/static/js/main.3932e6bf.js",
+    "main.js": "/portfolio-site/static/js/main.5919742c.js",
     "static/js/488.095f03e0.chunk.js": "/portfolio-site/static/js/488.095f03e0.chunk.js",
+    "static/media/blue-web-2.png": "/portfolio-site/static/media/blue-web-2.cdf622d6bafdc6a7b173.png",
+    "static/media/netflix-web-1.png": "/portfolio-site/static/media/netflix-web-1.48e35463fac7e77e4c51.png",
     "static/media/me-1.png": "/portfolio-site/static/media/me-1.7c2ec849f1aab59ebcf3.png",
+    "static/media/job-web-2.png": "/portfolio-site/static/media/job-web-2.22acb28bb16cd812290f.png",
+    "static/media/studio-1.png": "/portfolio-site/static/media/studio-1.9227b27f9744b156f9e3.png",
+    "static/media/ice-web-1.png": "/portfolio-site/static/media/ice-web-1.44cd481519f42c79949c.png",
+    "static/media/messo-app-face.png": "/portfolio-site/static/media/messo-app-face.50af24163e82f1e8160a.png",
+    "static/media/messo-web-1.png": "/portfolio-site/static/media/messo-web-1.709ae973b32b958e8de1.png",
     "static/media/work-sans.regular.ttf": "/portfolio-site/static/media/work-sans.regular.0014f9c01dd97e20fa0c.ttf",
+    "static/media/blue-app-face.png": "/portfolio-site/static/media/blue-app-face.c94f59e6edb9805702cd.png",
+    "static/media/node-1.png": "/portfolio-site/static/media/node-1.37077db72409df48110a.png",
     "static/media/roboto-latin-700-normal.woff2": "/portfolio-site/static/media/roboto-latin-700-normal.4535474e1cf8598695ad.woff2",
     "static/media/roboto-latin-500-normal.woff2": "/portfolio-site/static/media/roboto-latin-500-normal.7077203b1982951ecf76.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/portfolio-site/static/media/roboto-latin-400-normal.297d48e1b5a10c0831a9.woff2",
@@ -63,11 +72,11 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/portfolio-site/static/media/roboto-greek-ext-400-normal.16eb83b4a3b1ea994243.woff",
     "index.html": "/portfolio-site/index.html",
     "main.020efd5d.css.map": "/portfolio-site/static/css/main.020efd5d.css.map",
-    "main.3932e6bf.js.map": "/portfolio-site/static/js/main.3932e6bf.js.map",
+    "main.5919742c.js.map": "/portfolio-site/static/js/main.5919742c.js.map",
     "488.095f03e0.chunk.js.map": "/portfolio-site/static/js/488.095f03e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.020efd5d.css",
-    "static/js/main.3932e6bf.js"
+    "static/js/main.5919742c.js"
   ]
 }
