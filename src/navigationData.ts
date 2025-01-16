@@ -1,5 +1,14 @@
 import { ChipPropsColorOverrides } from "@mui/material";
 import handleDownload from "./servises/handleDowload.ts";
+import messoApp  from "./assets/messo-app-face.png";
+import blueApp from "./assets/blue-app-face.png";
+import jobApply24 from  "./assets/job-web-2.png";
+import blueboxRent from "./assets/blue-web-2.png";
+import messo from  "./assets/messo-web-1.png";
+import node from  "./assets/node-1.png";
+import netflix from "./assets/netflix-web-1.png";
+import webstudio from  "./assets/studio-1.png";
+import ice from  "./assets/ice-web-1.png";
 
 
 export interface CardData {
@@ -21,7 +30,7 @@ export interface CardData {
 const commercialsData: CardData[] = [
   {
     id: 1,
-    image: "../assets/messo-app-face.png",
+    image: messoApp,
     alt: "messo project",
     title: "Messo",
     subtitle: "Mobile messenger whitout cloud",
@@ -41,7 +50,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 2,
-    image: "../assets/blue-app-face.png",
+    image: blueApp,
     alt: "BlueboxDriver project",
     title: "BlueboxDriver",
     subtitle: "Mobile application for cargo drivers",
@@ -60,7 +69,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 3,
-    image: "../assets/job-web-2.png",
+    image:jobApply24,
     alt: "JobApply24 project",
     title: "JobApply24",
     subtitle: "Job seaching portal",
@@ -74,7 +83,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 4,
-    image: "../assets/blue-web-2.png",
+    image: blueboxRent ,
     alt: "BlueboxDriver",
     title: "BlueboxRent",
     subtitle: "Storage servise site",
@@ -88,7 +97,7 @@ const commercialsData: CardData[] = [
   },
   {
     id: 5,
-    image: "../assets/messo-web-1.png",
+    image: messo,
     alt: "messo project",
     title: "Messo",
     subtitle: "Product info site",
@@ -104,8 +113,8 @@ const commercialsData: CardData[] = [
 const petData: CardData[] = [
   {
     id: 6,
-    image: "../assets/node-1.png",
-    alt: "messo project",
+    image: node,
+    alt: "Node",
     title: "Node.js",
     subtitle: "Mobile messenger whitout cloud",
     technology: "Node.js | Express | MangoDB | Mongoose | Postman",
@@ -117,9 +126,9 @@ const petData: CardData[] = [
   },
   {
     id: 7,
-    image: "../assets/netflix-web-1.png",
-    alt: "messo project",
-    title: "Netflix movie chart",
+    image: netflix,
+    alt: "netflix",
+    title: "Movie chart",
     subtitle: "Movies owerview site",
     technology: "HTML | CSS | JS | React | Webpack | REST API | TMDB API",
     chipColor: "info",
@@ -135,8 +144,8 @@ const petData: CardData[] = [
   },
   {
     id: 9,
-    image: "../assets/studio-1.png",
-    alt: "messo project",
+    image: webstudio,
+    alt: "WEB Studio Shop",
     title: "WEB Studio Shop",
     subtitle: "Movies owerview site",
     technology: "HTML | SAAS | JS Vanila | Parcel | GIT",
@@ -153,8 +162,8 @@ const petData: CardData[] = [
   },
   {
     id: 10,
-    image: "../assets/ice-web-1.png",
-    alt: "messo project",
+    image: ice,
+    alt: "Ice Cream Shop",
     title: "Ice Cream Shop",
     subtitle: "Movies owerview site",
     technology: "HTML | CSS | JS Vanila | Parcel | GIT",

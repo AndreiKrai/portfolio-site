@@ -9,7 +9,7 @@ import Layout from "./components/Layout.tsx";
 import { createTheme, ThemeProvider } from "@mui/material";
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <NavigationProvider>
       <ThemeProvider theme={theme}>
         <BackgroundListiners />
