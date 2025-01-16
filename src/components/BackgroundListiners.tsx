@@ -10,11 +10,12 @@ const BackgroundListiners = () => {
   );
 
   useEffect(() => {
-    menuHandler.closeMenu();
     window.scrollTo(0, 0); // Scroll to the top of the page
-    setIsMounted(true);
+    menuHandler.closeMenu();
+   setTimeout(()=>setIsMounted(true),50) 
   }, [location]);
 
+  
   useEffect(() => {
     const handleScroll = () => {
       // Close the menu immediately when scrolling starts

@@ -43,7 +43,6 @@ export default function Section({
               }}
             />
             <Typography
-              variant="h6"
               sx={{
                 color: "rgb(117, 117, 117)",
                 textAlign: "center",

@@ -36,11 +36,12 @@ const HeroSection = () => {
           in={showImage}
           timeout={{ appear: 1000, enter: 1000, exit: 1500 }}
         >
-          <img
+          <Box
+          component="img"
             src={face}
             alt="Welcome"
-            style={{
-              maxWidth: "70%", // Image scales with container
+            sx={{
+              maxWidth:{xs:"100%",md:"70%"}, // Image scales with container
               height: "auto", // Maintains aspect ratio
               marginBottom: "16px", // Space between image and text
               marginTop: "10px",
@@ -55,7 +56,7 @@ const HeroSection = () => {
             right: {xs:"0",md:"120px"},
             color: "black",
             textAlign: "center",
-            fontSize: { xs: "32px", md: "48px" },
+            fontSize: { xs: "30px", md: "48px" },
             fontWeight:700
           }}
         >
