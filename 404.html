@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=/" />
-    <script>
-      window.location.replace("/");
-    </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Extract the current path
+    const redirectTo = window.location.pathname;
+    // Redirect to index.html with the current path appended as a query parameter
+    window.location.href = "/portfolio-site/index.html" + "?redirect=" + redirectTo;
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
 </html>
