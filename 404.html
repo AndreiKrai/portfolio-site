@@ -3,10 +3,14 @@
   <head>
     <meta http-equiv="refresh" content="0; url=/portfolio-site/" />
     <script>
-      window.location.replace("/portfolio-site" + window.location.pathname);
+      // Check if the user is already on the intended page
+      if (!window.location.pathname.startsWith("/portfolio-site")) {
+        window.location.replace("/portfolio-site" + window.location.pathname);
+      }
     </script>
   </head>
   <body>
     Redirecting...
   </body>
 </html>
+
