@@ -28,6 +28,7 @@ const HeroSection = () => {
           alignItems: "center", // Center content
           justifyContent: "center",
           width: "100%", // Ensure container takes full width
+           minHeight:{xs:"197px", sm:"331px", md:"384px",lg:"483px"},
           pb: 2,
           pt: { xs: "62px", md: "92px" },
         }}

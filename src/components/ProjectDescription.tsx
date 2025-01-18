@@ -12,7 +12,7 @@ export default function ProjectDescription({
   const { isMounted, navigateTo } = useNavigation();
 
   return (
-    <Grid container spacing={2} sx={{ pt: { xs: "62px", md: "92px" } }}>
+    <Grid container spacing={2} sx={{ pt: { xs: "62px", md: "92px" },minHeight:{xs:"100vh",md:"840px"} }}>
       <Grid item xs={12} md={6}>
         <Slide
           direction="right"
