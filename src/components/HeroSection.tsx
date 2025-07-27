@@ -14,7 +14,7 @@ const HeroSection = () => {
     } else {
       setTimeout(() => {
         setShowImage(true);
-      }, 1000);
+      }, 0);
     }
   }, [isMounted]);
 

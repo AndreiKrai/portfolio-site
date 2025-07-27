@@ -19,7 +19,7 @@ export interface CardData {
   title: string;
   subtitle: string;
   technology: string;
-  chipTitle:string;
+  chipTitle: string;
   chipColor: ChipPropsColorOverrides;
   link?: string;
   gitLink?: string;
@@ -186,7 +186,8 @@ const petData: CardData[] = [
     alt: "Sport Portal",
     title: "Sport Portal",
     subtitle: "Responsive site with backend",
-    technology: "HTML | React | Node.js | Express | Prisma | PostgreSQL | Docker",
+    technology:
+      "HTML | React | Node.js | Express | Prisma | PostgreSQL | Docker",
     chipColor: "info",
     chipTitle: "WEB | Backend",
     link: "https://github.com/AndreiKrai/run-client",
@@ -194,7 +195,7 @@ const petData: CardData[] = [
     screenshorts: ["../assets/run-2.png", "../assets/run-3.png"],
     descriptionImage: run,
     projectReview:
-      "Portal for Sport Events with schedules, results. Where administrators can add, edit and delete events, categories, and users can view and register for events. The project was built using React for the frontend, Node.js with Express for the backend, and Prisma with PostgreSQL for database management. The application features a responsive design, ensuring optimal user experience across devices. It includes user authentication, event management functionalities, and a clean, intuitive interface for both administrators and users.",
+      "Portal for Sport Events with schedules, results. Where administrators can add, edit and delete events, categories, ages, sex, and users can view and register for events. The project was built using React for the frontend, Node.js with Express for the backend, and Prisma with PostgreSQL for database management. The application features a responsive design, ensuring optimal user experience across devices. It includes user authentication, event management functionalities, and a clean, intuitive interface for both administrators and users.",
   },
 ];
 

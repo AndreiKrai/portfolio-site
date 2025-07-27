@@ -4,17 +4,19 @@ import Section from "../components/Section.tsx";
 import ProjectDescription from "../components/ProjectDescription.tsx";
 import FourImagesInRow from "../components/FourImagesInRow.tsx";
 import TwoImagesInRow from "../components/TwoImagesInRow.tsx";
-import TextBlock from "../components/TextBlock.tsx";
 import CardGrid from "../components/CardGrid.tsx";
 import { commercialsData, petData } from "../navigationData.ts";
 import { Typography } from "@mui/material";
 
 const PortfolioItemPage = () => {
   const { id } = useParams();
-
+  const anotherProjects = [...commercialsData, ...petData].filter(
+    (data) => data.id !== Number(id)
+  );
   const details = [...commercialsData, ...petData].find(
     (data) => data.id === Number(id)
   );
+
   if (!details) {
     return (
       <Section isLight={false}>
@@ -51,7 +53,7 @@ const PortfolioItemPage = () => {
       </Section>
       {renderScreenshorts()}
       <Section title={"CHECK OTHER PROJECTS"} isLight={true}>
-        <CardGrid list={commercialsData} />
+        <CardGrid list={anotherProjects} />
       </Section>
     </>
   );

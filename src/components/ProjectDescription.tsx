@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Slide, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "../context/navigationContext.tsx";
 import { CardData } from "../navigationData.ts";
 
@@ -10,14 +10,24 @@ export default function ProjectDescription({
   details,
 }: ProjectDescriptionProps) {
   const { isMounted, navigateTo } = useNavigation();
+  const [delayedMounted, setDelayedMounted] = useState(false);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    if (isMounted) {
+      timeout = setTimeout(() => setDelayedMounted(true), 500);
+    } else {
+      setDelayedMounted(false);
+    }
+    return () => clearTimeout(timeout);
+  }, [isMounted]);
 
   return (
-    <Grid container spacing={2} sx={{ pt: { xs: "62px", md: "92px" },minHeight:{xs:"100vh",md:"840px"} }}>
+    <Grid container spacing={2} sx={{minHeight:{xs:"100vh",md:"840px"} }}>
       <Grid item xs={12} md={6}>
         <Slide
           direction="right"
-          in={isMounted}
-
+          in={delayedMounted}
           timeout={1000}
           mountOnEnter
           unmountOnExit
@@ -40,7 +50,7 @@ export default function ProjectDescription({
        <Grid item xs={12} md={6}>
         <Slide
           direction="left"
-          in={isMounted}
+          in={delayedMounted}
           timeout={1000}
           mountOnEnter
           unmountOnExit
