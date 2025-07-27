@@ -33,7 +33,7 @@ export default function ActionAreaCard({ data }: ActionAreaCardProps) {
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Typography
                 gutterBottom
-                variant="h5"
+                variant="subtitle1"
                 component="div"
                 style={{ color: "black" }}
               >

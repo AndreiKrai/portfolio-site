@@ -29,7 +29,7 @@ const PortfolioItemPage = () => {
   }
 
   const renderScreenshorts = () => {
-    if (details?.chipTitle === "Mobile") {
+    if (details?.chipTitle.includes("Mobile")) {
       return (
         <Section isLight={false}>
           <FourImagesInRow details={details} />
