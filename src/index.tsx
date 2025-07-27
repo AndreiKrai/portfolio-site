@@ -8,6 +8,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./App.css";
+import "./assets/generics.ts"
 import { ContextProvider } from "./context/mainContext.tsx";
 import { ThemeProvider } from "./context/themeContext.tsx";
 
