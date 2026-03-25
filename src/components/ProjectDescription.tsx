@@ -13,14 +13,21 @@ export default function ProjectDescription({
   const [delayedMounted, setDelayedMounted] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    if (isMounted) {
-      timeout = setTimeout(() => setDelayedMounted(true), 500);
-    } else {
+    if (!isMounted) {
       setDelayedMounted(false);
+      return;
     }
-    return () => clearTimeout(timeout);
-  }, [isMounted]);
+
+    let cancelled = false;
+
+    const img = new Image();
+    img.onload = () => { if (!cancelled) setDelayedMounted(true); };
+    img.onerror = () => { if (!cancelled) setDelayedMounted(true); };
+    img.src = details.descriptionImage;
+    if (img.complete && !cancelled) setDelayedMounted(true);
+
+    return () => { cancelled = true; };
+  }, [isMounted, details.descriptionImage]);
 
   return (
     <Grid container spacing={2} sx={{minHeight:{xs:"100vh",md:"840px"} }}>
