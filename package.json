@@ -1,8 +1,8 @@
 {
   "name": "my-site",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
-  "homepage": "https://your-username.github.io/portfolio-site",
+  "homepage": "https://andreikrai.github.io/portfolio-site",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
