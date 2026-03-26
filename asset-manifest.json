@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio-site/static/css/main.020efd5d.css",
-    "main.js": "/portfolio-site/static/js/main.ad656908.js",
+    "main.js": "/portfolio-site/static/js/main.b98cd70b.js",
     "static/js/488.095f03e0.chunk.js": "/portfolio-site/static/js/488.095f03e0.chunk.js",
     "static/media/netflix-web-1.png": "/portfolio-site/static/media/netflix-web-1.f2a0c3ce4c08f47354c8.png",
     "static/media/job-web-2.png": "/portfolio-site/static/media/job-web-2.81e02fcb24eb75b1c735.png",
@@ -75,11 +75,11 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/portfolio-site/static/media/roboto-greek-ext-400-normal.16eb83b4a3b1ea994243.woff",
     "index.html": "/portfolio-site/index.html",
     "main.020efd5d.css.map": "/portfolio-site/static/css/main.020efd5d.css.map",
-    "main.ad656908.js.map": "/portfolio-site/static/js/main.ad656908.js.map",
+    "main.b98cd70b.js.map": "/portfolio-site/static/js/main.b98cd70b.js.map",
     "488.095f03e0.chunk.js.map": "/portfolio-site/static/js/488.095f03e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.020efd5d.css",
-    "static/js/main.ad656908.js"
+    "static/js/main.b98cd70b.js"
   ]
 }
