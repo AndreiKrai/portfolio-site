@@ -48,9 +48,11 @@ export default function ActionAreaCard({ data }: ActionAreaCardProps) {
             <Typography variant="subtitle2" sx={{ color:"black" ,}}>
               {data.subtitle}
             </Typography>
+            {data.technology && (
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
               {data.technology}
             </Typography>
+            )}
           </CardContent>
         </CardActionArea>
       </Card>

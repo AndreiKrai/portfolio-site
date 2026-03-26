@@ -39,7 +39,7 @@ export default function ProjectDescription({
           mountOnEnter
           unmountOnExit
         >
-          <Box sx={{ mx: "42px",pb:{xs:4,md:0},height:"100%", display: "flex", justifyContent: "center",alignItems:"center" }}>
+          <Box sx={{ mx: {xs:"20px",sm:"42px"},pb:{xs:4,md:0},pt:{xs:"30px",sm:"10px"},height:"100%", display: "flex", justifyContent: "center",alignItems:"center" }}>
             <img
               src={details.descriptionImage}
               alt="Welcome"
@@ -47,8 +47,6 @@ export default function ProjectDescription({
                 width: "100%",
                 maxWidth: "475px",
                 height: "auto",
-                // marginBottom: "16px",
-                marginTop: "10px",
               }}
             />
           </Box>
@@ -63,7 +61,7 @@ export default function ProjectDescription({
           unmountOnExit
         >
           <Box sx={{ display: "flex",height:"100%", alignContent: "center", alignItems:"center" }}>
-            <Box sx={{ mx: "42px" }}>
+            <Box sx={{ mx: {xs:"20px",sm:"42px"} }}>
               <Typography
                 variant="h3"
                 sx={{fontSize:{xs:"32px",md:"48px"}, color: "black", textAlign: "start", my: 2 }}
@@ -71,12 +69,14 @@ export default function ProjectDescription({
                 {details.title}
               </Typography>
               {/* technologies */}
+              {details.technology && (
               <Typography variant="body1" sx={{ fontWeight: "bold" ,}}>
                 Technologies I worked with on the project:{" "}
                 <Typography component="span" sx={{ color: "GREY" }}>
                   {details.technology}
                 </Typography>{" "}
               </Typography>
+              )}
 
               <Box
                 sx={{
@@ -89,7 +89,7 @@ export default function ProjectDescription({
               />
               <Typography
                 variant="caption"
-                sx={{ color: "black", textAlign: "start",fontSize:"16px" }}
+                sx={{ color: "black", textAlign: "start",fontSize:"16px", whiteSpace: "pre-line" }}
               >
                 {details.projectReview}
               </Typography>

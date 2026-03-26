@@ -1,10 +1,10 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import Section from "../components/Section.tsx";
 import ProjectDescription from "../components/ProjectDescription.tsx";
 import FourImagesInRow from "../components/FourImagesInRow.tsx";
 import TwoImagesInRow from "../components/TwoImagesInRow.tsx";
 import CardGrid from "../components/CardGrid.tsx";
+import VideoSection from "../components/VideoSection.tsx";
 import { commercialsData, petData } from "../navigationData.ts";
 import { Typography } from "@mui/material";
 
@@ -52,7 +52,12 @@ const PortfolioItemPage = () => {
         </>
       </Section>
       {renderScreenshorts()}
-      <Section title={"CHECK OTHER PROJECTS"} isLight={true}>
+      {details.video && (
+        <Section isLight={true}>
+          <VideoSection details={details} />
+        </Section>
+      )}
+      <Section title={"CHECK OTHER PROJECTS"} isLight={false}>
         <CardGrid list={anotherProjects} />
       </Section>
     </>

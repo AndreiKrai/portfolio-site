@@ -11,6 +11,7 @@ import netflix from "./assets/netflix-web-1.png";
 import webstudio from "./assets/studio-1.png";
 import ice from "./assets/ice-web-1.png";
 import run from "./assets/run-1.png";
+import allMishna from "./assets/mishna-app-face.png";
 
 export interface CardData {
   id: number;
@@ -18,7 +19,7 @@ export interface CardData {
   alt: string;
   title: string;
   subtitle: string;
-  technology: string;
+  technology?: string;
   chipTitle: string;
   chipColor: ChipPropsColorOverrides;
   link?: string;
@@ -26,11 +27,33 @@ export interface CardData {
   screenshorts?: [string, string] | [string, string, string, string];
   descriptionImage: string;
   projectReview: string;
+  video?: { webm?: string; mp4: string };
 }
 
 const commercialsData: CardData[] = [
-  {
+    {
     id: 1,
+    image: allMishna,
+    alt: "allmishna project",
+    title: "AllMishna",
+    subtitle: "Daily guided Mishnah study app with audio, tracking, and progress",
+    technology:"",
+    chipColor: "warning",
+    chipTitle: "Mobile",
+    link: "https://apps.apple.com/ch/app/all-mishnah/id1598932850?l=en-GB",
+    screenshorts: [
+      "../assets/hallacha-mob-1.png",
+      "../assets/hallacha-mob-2.png",
+      "../assets/hallacha-mob-3.png",
+      "../assets/hallacha-mob-4.png",
+    ],
+    descriptionImage: "../assets/hallacha-mob-5.png",
+    video: { webm: "../assets/video-allmishna-web.mp4", mp4: "../assets/video-allmishna-m.mp4" },
+    projectReview:
+      "All Mishna is a mobile application built to support structured daily study of the Mishnah, one of the central texts in Jewish tradition. The app is part of a broader learning initiative that encourages users to study a small, predefined portion each day, creating a long-term, habit-based learning journey. Instead of just providing content, the app guides users on what to learn today and helps them stay consistent over time.\n\ From a product standpoint, it’s a mix of:\n• Learning platform (like Duolingo-style progression)\n• Media streaming app (audio/video lectures)\n• Personal tracker (habit-based daily learning)\n\nFrom a developer perspective, the biggest shift was realizing this is not just a media app — it’s a time-based educational system with strict domain logic, where correctness (daily content, progress, continuity) is just as important as performance.",
+  },
+  {
+    id: 11,
     image: messoApp,
     alt: "messo project",
     title: "Messo",
@@ -47,6 +70,7 @@ const commercialsData: CardData[] = [
       "../assets/messo-mob-4.png",
     ],
     descriptionImage: "../assets/messo-mob-5.png",
+    video: { webm: "../assets/video_01.webm", mp4: "../assets/video_01.mp4" },
     projectReview:
       "The main task was to develop and deliver a secure messenger application built entirely from scratch. The app was designed to prioritize user data privacy by ensuring that no data is stored in the cloud. Instead, all data resides securely on the user's device, with the capability to export it as an encrypted file for transfer to another device. To maintain a high level of security, all data within the app is fully encrypted, and we implemented custom messaging logic without utilizing any third-party messaging libraries. This approach allowed us to ensure complete control over the messaging system's security and functionality. The Minimum Viable Product (MVP) was completed and successfully launched on both the iOS App Store and the Google Play Store, marking a significant milestone in the project's development.",
   },

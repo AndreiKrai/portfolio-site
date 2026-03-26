@@ -22,7 +22,7 @@ export default function Section({
       }}
     >
       <Container
-        sx={{ paddingTop: "94px", paddingBottom: `${paddingBottom}px` }}
+        sx={{ paddingTop: { xs: "20px", sm: "94px" }, paddingBottom: { xs: "20px", sm: `${paddingBottom}px` } }}
       >
         {title && (
           <Box
